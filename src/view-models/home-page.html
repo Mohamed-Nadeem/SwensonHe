@@ -1,0 +1,12 @@
+<template>
+    <require from="../styles/home-page.css"></require>
+    <require from="../lib/country-button"></require>
+
+    <div class="home-page-main-div">
+        <div class="jumbotron text-center">
+            <h1 class="heading-tag">COUNTRIES AROUND THE WORLD</h1>
+        </div>
+    
+        <country-button countries.bind="countries"></country-button>
+    </div>
+</template>

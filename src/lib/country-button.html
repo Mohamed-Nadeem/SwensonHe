@@ -1,0 +1,27 @@
+<template>
+    <require from="../styles/home-page.css"></require>
+
+    <div class="container">
+        <div class="row justify-content-center">
+             <button class="col-xs-1 center-block country-button" 
+            repeat.for="country of countries"
+            type="button" 
+            click.delegate="showDetails($index)"
+            data-toggle="modal" data-target="#myModal">${country.name}</button>
+        </div>
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" click.delegate="closeModal()">&times;</span>
+                <div class="modal-content-div">
+                    <h3 class="modal-heading">Details of ${countryDetails.country}</h3>
+                    <h5>Capital: &#09 ${countryDetails.capital}</h5>
+                    <h5>Region: &#09 ${countryDetails.region}</h5>
+                    <h5>Population: &#09 ${countryDetails.population}</h5>
+                </div>
+                <button type="button" class="btn btn-warning close-button" click.delegate="closeModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</template>
